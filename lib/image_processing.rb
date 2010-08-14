@@ -1,6 +1,6 @@
 module ImageProcessing
   def self.image_directory
-    "/var/wesabe/images"
+    File.join(ApiEnv::FILE_PATH, 'images')
   end
 
   MAX_SIZE = 2.megabytes
@@ -119,7 +119,7 @@ module ImageProcessing
     end
 
     def save_original_image
-      returning File.join(ImageProcessing.image_directory, image_path(:original, image_ext)) do |original_filename|
+      File.join(ImageProcessing.image_directory, image_path(:original, image_ext)).tap do |original_filename|
         File.open(original_filename, "wb+") { |f| f << image_file.read }
       end
     end

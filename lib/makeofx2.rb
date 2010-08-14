@@ -34,20 +34,29 @@ class MakeOFX2
     # OFX_CONVERTER defined in config/environments/[production|development].rb
     # the converter is currently a python app
 
-    command = OFX_CONVERTER + ' -d' +
+    command = OFX_CONVERTER + # ' -d ' +
       (options[:account_number] ? " --acctid #{options[:account_number]}" : '') +
       (options[:account_type] ? " --accttype \"#{options[:account_type]}\"" : '') +
       (options[:balance] ? " --balance #{options[:balance]}" : '') +
       (options[:currency] ? " --curdef #{options[:currency]}" : '') +
      (options[:financial_inst].date_format_ddmmyyyy? ? ' --dayfirst' : '')
 
-    # using systemu so we can not only separate stdout and stderr, but also get the exitstatus (Open3 won't
-    # give us the exitstatus)
-    status = systemu(command, :stdin => statement, :stdout => (stdout=''), :stderr => (stderr=''))
-    return stdout if status.exitstatus == SUCCESS
+    # Not using ChildLabor because it was hanging for me.  Note - this
+    # removes the ability to look at stderr (until Ruby 1.9, but the
+    # stderr messages should still come through in the logs).
+    stdout, stderr = nil
+
+    IO.popen(command, "w+") do |pipe|
+      pipe.write statement
+      pipe.close_write
+      stdout = pipe.read
+    end
+    exit_status = $?
 
     # handle exceptions
-    case status.exitstatus
+    case exit_status
+    when SUCCESS
+      return stdout
     when FatalError::RETURN_CODE
       exception = FatalError.new
     when NoInputError::RETURN_CODE

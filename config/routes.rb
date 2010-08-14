@@ -2,18 +2,18 @@ Pfc::Application.routes.draw do
   ## Dashboard
 
   root :to => 'dashboard#index'
-  match 'dashboard' => redirect('/'), :as => :dashboard
+  get 'dashboard' => redirect('/'), :as => 'dashboard'
 
   ## Login & Signup
 
-  get  :login,  :to => 'sessions#new'
-  post :login,  :to => 'sessions#create'
-  get  :logout, :to => 'sessions#destroy'
+  get  'login'  => 'sessions#new',     :as => 'login'
+  post 'login'  => 'sessions#create'
+  get  'logout' => 'sessions#destroy', :as => 'logout'
 
   resource :session
 
-  get  :signup, :to => 'users#new'
-  post :signup, :to => 'users#create'
+  get  'signup' => 'users#new', :as => 'signup'
+  post 'signup' => 'users#create'
 
   ## Accounts, Transactions, Analytics, & Uploads
 
@@ -35,7 +35,7 @@ Pfc::Application.routes.draw do
   end
 
   # TODO: Fix this hack.
-  get '/transactions/rational(.:format)', :to => 'rational_txactions#index'
+  get '/transactions/rational(.:format)' => 'rational_txactions#index'
 
   resources :transactions, :controller => 'txactions' do
     member do
@@ -80,6 +80,7 @@ Pfc::Application.routes.draw do
   resource :profile
   resource :preferences, :controller => 'user_preferences'
   resource :user do
+    post :edit_filter_tags, :to => 'users#edit_filter_tags'
     get :password, :to => 'users#edit_password'
     put :password, :to => 'users#update_password'
     get :download_data

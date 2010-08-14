@@ -1,221 +1,154 @@
---- 
-dependencies: 
-  faker: 
-    group: 
-    - :test
-    version: ">= 0"
-  ruby-debug: 
-    group: 
-    - :test
-    version: ">= 0"
-  fastercsv: 
-    group: 
-    - :default
-    version: ">= 0"
-  rails: 
-    group: 
-    - :default
-    version: = 3.0.0.beta4
-  libxml-ruby: 
-    group: 
-    - :default
-    version: = 1.1.3
-    require: 
-    - xml/libxml
-  memcache-client: 
-    group: 
-    - :default
-    version: ">= 0"
-    require: 
-    - memcache
-  mysql: 
-    group: 
-    - :development
-    version: ">= 0"
-  machinist: 
-    group: 
-    - :test
-    version: ">= 0"
-  delayed_job: 
-    group: 
-    - :default
-    version: = 2.1.0.pre
-  mime-types: 
-    group: 
-    - :default
-    version: ">= 0"
-    require: 
-    - mime/types
-  rspec: 
-    group: 
-    - :test
-    version: ">= 2.0.0.beta.17"
-  rspec-rails: 
-    group: 
-    - :test
-    version: ">= 2.0.0.beta.17"
-  riddle: 
-    group: 
-    - :default
-    version: ">= 0"
-  libcharguess: 
-    group: 
-    - :development
-    version: ">= 0"
-  oniguruma: 
-    group: 
-    - :default
-    version: ">= 0"
-  rest-client: 
-    group: 
-    - :default
-    version: ">= 0"
-    require: 
-    - rest_client
-  daemons: 
-    group: 
-    - :default
-    version: ">= 0"
-  chronic: 
-    group: 
-    - :default
-    version: = 0.2.3
-  systemu: 
-    group: 
-    - :default
-    version: ">= 0"
-  rubyzip: 
-    group: 
-    - :default
-    version: ">= 0"
-    require: 
-    - zip/zip
-  rdoc: 
-    group: 
-    - :default
-    version: ">= 0"
-  webmock: 
-    group: 
-    - :test
-    version: ">= 0"
-specs: 
-- rake: 
-    version: 0.8.7
-- abstract: 
-    version: 1.0.0
-- activesupport: 
-    version: 3.0.0.beta4
-- builder: 
-    version: 2.1.2
-- i18n: 
-    version: 0.4.1
-- activemodel: 
-    version: 3.0.0.beta4
-- erubis: 
-    version: 2.6.6
-- rack: 
-    version: 1.1.0
-- rack-mount: 
-    version: 0.6.9
-- rack-test: 
-    version: 0.5.4
-- tzinfo: 
-    version: 0.3.22
-- actionpack: 
-    version: 3.0.0.beta4
-- mime-types: 
-    version: "1.16"
-- polyglot: 
-    version: 0.3.1
-- treetop: 
-    version: 1.4.8
-- mail: 
-    version: 2.2.5
-- actionmailer: 
-    version: 3.0.0.beta4
-- arel: 
-    version: 0.4.0
-- activerecord: 
-    version: 3.0.0.beta4
-- activeresource: 
-    version: 3.0.0.beta4
-- addressable: 
-    version: 2.1.2
-- bundler: 
-    version: 0.9.26
-- json_pure: 
-    version: 1.4.3
-- rubyforge: 
-    version: 2.0.4
-- hoe: 
-    version: 2.6.1
-- chronic: 
-    version: 0.2.3
-- columnize: 
-    version: 0.3.1
-- crack: 
-    version: 0.1.8
-- daemons: 
-    version: 1.1.0
-- delayed_job: 
-    version: 2.1.0.pre
-- diff-lcs: 
-    version: 1.1.2
-- faker: 
-    version: 0.3.1
-- fastercsv: 
-    version: 1.5.3
-- libcharguess: 
-    version: "1.0"
-- libxml-ruby: 
-    version: 1.1.3
-- linecache: 
-    version: "0.43"
-- machinist: 
-    version: 1.0.6
-- memcache-client: 
-    version: 1.8.5
-- mysql: 
-    version: 2.8.1
-- nokogiri: 
-    version: 1.4.2
-- oniguruma: 
-    version: 1.1.0
-- thor: 
-    version: 0.13.8
-- railties: 
-    version: 3.0.0.beta4
-- rails: 
-    version: 3.0.0.beta4
-- rdoc: 
-    version: 2.5.9
-- rest-client: 
-    version: 1.6.0
-- riddle: 
-    version: 1.0.11
-- rspec-core: 
-    version: 2.0.0.beta.17
-- rspec-expectations: 
-    version: 2.0.0.beta.17
-- rspec-mocks: 
-    version: 2.0.0.beta.17
-- rspec: 
-    version: 2.0.0.beta.17
-- webrat: 
-    version: 0.7.1
-- rspec-rails: 
-    version: 2.0.0.beta.17
-- ruby-debug-base: 
-    version: 0.10.3
-- ruby-debug: 
-    version: 0.10.3
-- rubyzip: 
-    version: 0.9.4
-- systemu: 
-    version: 1.2.0
-- webmock: 
-    version: 1.3.1
-hash: 470d9a830b26a14af42b66c6da7f72c4e5286dc4
-sources: 
-- Rubygems: 
-    uri: http://gemcutter.org
+GEM
+  remote: http://rubygems.org/
+  specs:
+    abstract (1.0.0)
+    actionmailer (3.0.0.rc)
+      actionpack (= 3.0.0.rc)
+      mail (~> 2.2.5)
+    actionpack (3.0.0.rc)
+      activemodel (= 3.0.0.rc)
+      activesupport (= 3.0.0.rc)
+      builder (~> 2.1.2)
+      erubis (~> 2.6.6)
+      i18n (~> 0.4.1)
+      rack (~> 1.2.1)
+      rack-mount (~> 0.6.9)
+      rack-test (~> 0.5.4)
+      tzinfo (~> 0.3.22)
+    activemodel (3.0.0.rc)
+      activesupport (= 3.0.0.rc)
+      builder (~> 2.1.2)
+      i18n (~> 0.4.1)
+    activerecord (3.0.0.rc)
+      activemodel (= 3.0.0.rc)
+      activesupport (= 3.0.0.rc)
+      arel (~> 0.4.0)
+      tzinfo (~> 0.3.22)
+    activeresource (3.0.0.rc)
+      activemodel (= 3.0.0.rc)
+      activesupport (= 3.0.0.rc)
+    activesupport (3.0.0.rc)
+    addressable (2.2.0)
+    arel (0.4.0)
+      activesupport (>= 3.0.0.beta)
+    builder (2.1.2)
+    cgi_multipart_eof_fix (2.5.0)
+    chronic (0.2.3)
+      hoe (>= 1.2.1)
+    columnize (0.3.1)
+    crack (0.1.8)
+    daemons (1.1.0)
+    delayed_job (2.1.0.pre)
+      daemons
+    diff-lcs (1.1.2)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
+    faker (0.3.1)
+    fastercsv (1.5.3)
+    fastthread (1.0.7)
+    gem_plugin (0.2.3)
+    hoe (2.6.1)
+      rake (>= 0.8.7)
+      rubyforge (>= 2.0.4)
+    i18n (0.4.1)
+    json_pure (1.4.6)
+    libxml-ruby (1.1.3)
+    linecache (0.43)
+    machinist (1.0.6)
+    mail (2.2.5)
+      activesupport (>= 2.3.6)
+      mime-types
+      treetop (>= 1.4.5)
+    memcache-client (1.8.5)
+    mime-types (1.16)
+    mongrel (1.1.5)
+      cgi_multipart_eof_fix (>= 2.4)
+      daemons (>= 1.0.3)
+      fastthread (>= 1.0.1)
+      gem_plugin (>= 0.2.3)
+    mysql (2.8.1)
+    nokogiri (1.4.3.1)
+    oniguruma (1.1.0)
+    polyglot (0.3.1)
+    rack (1.2.1)
+    rack-mount (0.6.9)
+      rack (>= 1.0.0)
+    rack-test (0.5.4)
+      rack (>= 1.0)
+    rails (3.0.0.rc)
+      actionmailer (= 3.0.0.rc)
+      actionpack (= 3.0.0.rc)
+      activerecord (= 3.0.0.rc)
+      activeresource (= 3.0.0.rc)
+      activesupport (= 3.0.0.rc)
+      bundler (>= 1.0.0.rc.1)
+      railties (= 3.0.0.rc)
+    railties (3.0.0.rc)
+      actionpack (= 3.0.0.rc)
+      activesupport (= 3.0.0.rc)
+      rake (>= 0.8.3)
+      thor (~> 0.14.0)
+    rake (0.8.7)
+    rchardet (1.3)
+    rdoc (2.5.9)
+    rest-client (1.6.0)
+      mime-types (>= 1.16)
+    riddle (1.0.12)
+    rspec (2.0.0.beta.19)
+      rspec-core (= 2.0.0.beta.19)
+      rspec-expectations (= 2.0.0.beta.19)
+      rspec-mocks (= 2.0.0.beta.19)
+    rspec-core (2.0.0.beta.19)
+    rspec-expectations (2.0.0.beta.19)
+      diff-lcs (>= 1.1.2)
+    rspec-mocks (2.0.0.beta.19)
+    rspec-rails (2.0.0.beta.19)
+      rspec (= 2.0.0.beta.19)
+      webrat (>= 0.7.2.beta.1)
+    ruby-debug (0.10.3)
+      columnize (>= 0.1)
+      ruby-debug-base (~> 0.10.3.0)
+    ruby-debug-base (0.10.3)
+      linecache (>= 0.3)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
+    rubyzip (0.9.4)
+    thor (0.14.0)
+    treetop (1.4.8)
+      polyglot (>= 0.3.1)
+    tzinfo (0.3.22)
+    webmock (1.3.3)
+      addressable (>= 2.1.1)
+      crack (>= 0.1.7)
+    webrat (0.7.2.beta.1)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  chronic (= 0.2.3)
+  daemons
+  delayed_job (= 2.1.0.pre)
+  faker
+  fastercsv
+  libxml-ruby (= 1.1.3)
+  machinist
+  memcache-client
+  mime-types
+  mongrel
+  mysql
+  oniguruma
+  rails (= 3.0.0.rc)
+  rchardet
+  rdoc
+  rest-client
+  riddle
+  rspec (>= 2.0.0.beta.17)
+  rspec-rails (>= 2.0.0.beta.17)
+  ruby-debug
+  rubyzip
+  thor
+  webmock
